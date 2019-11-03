@@ -8,8 +8,6 @@ bitErrorRateOutput = zeros(1,11)
 counter=1;
 SNRAxis = zeros(1,11);
 
-
-
 for i = 0:5:50
     SNRAxis(counter) = i;
     bitErrorRate = calculate_error_rate(input, tempInput, i);
