@@ -105,7 +105,7 @@ sampled_input = kron(input, extension_vector);
 sampled_ook = sampled_input .* carrier;
 
 SNRAxis = zeros(1,11);
-AverageNonEncdoded = zeros(1,11);
+AverageNonEncoded = zeros(1,11);
 
 for runs = 1:20
     bitErrorRateOutput = zeros(1,11);
@@ -129,20 +129,20 @@ for runs = 1:20
         end
         bitErrorRate = calculate_error_rate(decoded_signal, input);
         bitErrorRateOutput(counter)=bitErrorRate;
-        AverageNonEncdoded(counter) = AverageNonEncdoded(counter) + bitErrorRateOutput(counter);
+        AverageNonEncoded(counter) = AverageNonEncoded(counter) + bitErrorRateOutput(counter);
         counter = counter +1;
     end
 end
 
-AverageNonEncdoded = AverageNonEncdoded ./ 20;
+AverageNonEncoded = AverageNonEncoded ./ 20;
 
 
-semilogy(SNRAxis, AverageNonEncdoded);
+semilogy(SNRAxis, AverageNonEncoded);
 axis([0 50 -1 1]);
 hold on;
-title('Plot of Bit Error vs SNR for Encoded vs Non-Encoded Signals');
-xlabel('Signal to Noise Ratio') ;
-ylabel('Log 10 Bit Error Rate') ;
+title('Plot of Bit Error vs SNR for Encoded vs Non-Encoded OOK Signals');
+xlabel('E_{b}/N_{0}') ;
+ylabel('P_{e}') ;
 legend({'y = Encoded','y = Non-Encoded'},'Location','southeast')
 
 function bitErrorRate = calculate_error_rate(input, tempInput)
