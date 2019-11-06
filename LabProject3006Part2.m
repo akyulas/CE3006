@@ -65,7 +65,6 @@ AveragebitErrorRateOutput = AveragebitErrorRateOutput ./ 20;
 semilogy(SNRAxis, AveragebitErrorRateOutput);
 ylim([10^(-5) 10^1])
 hold on
-semilogy(SNRAxis, bitErrorRateOutput);
 % axis([0 50 -1 1])
 
 hold on
@@ -106,10 +105,9 @@ semilogy(SNRAxis, AverageBPSKError);
 % axis([0 50 -1 1]);
 ylabel('Log 10 Bit Error Rate') ;
 hold on
-semilogy(SNRAxis, bitErrorRateOutput);
 % axis([0 50 -1 1]);
 title('Plot of Bit Error vs SNR for OOK and BPSK');
-legend({'y = AverageOOK','y = OOK', 'y= AverageBPSK', 'y=BPSK'},'Location','southeast')
+legend({'y = AverageOOK','y= AverageBPSK'},'Location','southeast')
 xlabel('Signal to Noise Ratio') ;
 ylabel('Log 10 Bit Error Rate') ;
 
