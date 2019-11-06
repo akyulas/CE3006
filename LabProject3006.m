@@ -16,6 +16,9 @@ for i = 0:5:50
 end
 semilogy(SNRAxis, bitErrorRateOutput);
 axis([0 50 -1 1])
+title("Plot of Bit Error Rate vs Signal to Noise Ratio");
+xlabel("Signal to Noise Ratio");
+ylabel("Log 10 of Bit Error Rate"); 
 
 function bitErrorRate = calculate_error_rate(input, tempInput, SNR)
     %Generate noise having normal distribution with zero mean 

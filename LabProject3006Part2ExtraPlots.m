@@ -48,30 +48,38 @@ for i = 1:1:1024
     end
 end
 
-figure;
-
 ts1 = timeseries(sampled_input,time);
 ts1.Name = 'Data waveform';
 subplot(5, 1, 1);
 plot(ts1);
+xlim([0 0.2]);
+ylim([-2 2]);
 
 ts2 = timeseries(sampled_ook,time);
 ts2.Name = 'Modulated Signal';
 subplot(5, 1, 2);
 plot(ts2);
+xlim([0 0.2]);
+ylim([-2 2]);
 
 ts3 = timeseries(received_signal,time);
 ts3.Name = 'Received Signal';
 subplot(5, 1, 3);
 plot(ts3);
+xlim([0 0.2]);
+ylim([-4 4]);
 
 ts4 = timeseries(demodulated_signal,time);
 ts4.Name = 'Demodulated signal';
 subplot(5, 1, 4);
 plot(ts4);
+xlim([0 0.2]);
+ylim([-4 4]);
 
 decoded_output = kron(decoded_signal, extension_vector);
 ts5 = timeseries(decoded_output,time);
 ts5.Name = 'Decoded signal';
 subplot(5, 1, 5);
 plot(ts5);
+xlim([0 0.2]);
+ylim([-2 2]);
