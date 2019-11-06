@@ -67,9 +67,6 @@ AverageEncodedOutput = AverageEncodedOutput ./ 20;
 semilogy(SNRAxis, AverageEncodedOutput);
 axis([0 50 -1 1]);
 hold on;
-% semilogy(SNRAxis, bitErrorRateOutput);
-% axis([0 50 -1 1]);
-% hold on;
 
 clear all;
 %Define carrier frequency in Hz
@@ -140,15 +137,10 @@ AverageNonEncdoded = AverageNonEncdoded ./ 20;
 semilogy(SNRAxis, AverageNonEncdoded);
 axis([0 50 -1 1]);
 hold on;
-% semilogy(SNRAxis, bitErrorRateOutput);
-% axis([0 50 -1 1])
-title('Plot of Bit Error vs SNR for Encoded vs Non-Encoded Signals');
-xlabel('Signal to Noise Ratio') ;
-ylabel('Log 10 Bit Error Rate') ;
+title('Plot of Bit Error vs SNR for Encoded vs Non-Encoded OOK Signals');
+xlabel('E_{b}/N_{0}') ;
+ylabel('P_{e}') ;
 legend({'y = Encoded','y = Non-Encoded'},'Location','southeast')
-
-
-
 
 function bitErrorRate = calculate_error_rate(input, tempInput)
     %Generate noise having normal distribution with zero mean

@@ -1,6 +1,6 @@
 %Generate 0 and 1 bit where N = 1024
 NumOfBits = 1024;
-input = randi([0, 1], [1, 1024]);
+input = randi([0, 1], [1, NumOfBits]);
 tempInput = input;
 %Convert binary digits to +1 and -1
 input(input==0) = [-1];
@@ -17,8 +17,8 @@ end
 semilogy(SNRAxis, bitErrorRateOutput);
 axis([0 50 -1 1])
 title("Plot of Bit Error Rate vs Signal to Noise Ratio");
-xlabel("Signal to Noise Ratio");
-ylabel("Log 10 of Bit Error Rate"); 
+xlabel('E_{b}/N_{0}') ;
+ylabel('P_{e}') ;
 
 function bitErrorRate = calculate_error_rate(input, tempInput, SNR)
     %Generate noise having normal distribution with zero mean 

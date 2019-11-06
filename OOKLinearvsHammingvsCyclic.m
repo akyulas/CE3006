@@ -215,6 +215,9 @@ AverageEncodedOutput = AverageEncodedOutput ./ 20;
 semilogy(SNRAxis, AverageEncodedOutput, 'c');
 axis([0 50 -1 1]);
 hold on;
+title('Plot of Bit Error vs SNR for Linear/Hamming/Cyclic Encoding');
+xlabel('E_{b}/N_{0}') ;
+ylabel('P_{e}') ;
 legend({'y = LinearEncoding','y = HammingEncoding', 'y = CyclicEncoding'},'Location','southeast')
 
 function bitErrorRate = calculate_error_rate(input, tempInput)

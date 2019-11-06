@@ -61,6 +61,7 @@ end
 
 semilogy(SNRAxis, bitErrorRateOutput);
 axis([0 50 -1 1]);
+hold on
 
 function bitErrorRate = calculate_error_rate(input, tempInput)
     %Generate noise having normal distribution with zero mean
