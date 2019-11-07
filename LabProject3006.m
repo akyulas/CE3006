@@ -28,7 +28,6 @@ function bitErrorRate = calculate_error_rate(input, tempInput, SNR)
     NoiseVariance = 1/ 10^(SNR/10);
     NoiseSTD = sqrt(NoiseVariance); %SD
     noise = NoiseSTD.*randn(1,1024) + b;
-    %stats = [mean(noise) std(noise) var(noise)];
 
     %Add noise sample with input data
     output = input + noise; 
@@ -44,7 +43,6 @@ function bitErrorRate = calculate_error_rate(input, tempInput, SNR)
         if (tempInput(i) > threshold && output(i) == 0) || (tempInput(i) <= threshold && output(i) == 1)
             bitError = bitError + 1;
         end
-    %bitError = biterr(tempInput,output);
     bitErrorRate= bitError/NumOfBits;
     end
 end
